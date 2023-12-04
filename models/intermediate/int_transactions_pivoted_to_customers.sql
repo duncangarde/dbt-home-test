@@ -16,7 +16,7 @@ transactions_intervals as (
         *,
         {{ dbt.datediff("previous_transaction_date", "transaction_date", 'day') }} as transactions_interval_days
     from transactions_previous_dates
-)
+),
 
 customer_grain as (
     select
